@@ -33,7 +33,7 @@ Interactive Texas Hold'em training web application featuring a Monte Carlo equit
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/poker-trainer.git
+git clone https://github.com/oraziooztas/poker-trainer.git
 cd poker-trainer
 npm install
 ```
@@ -45,6 +45,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+### Live Demo
+
+**[poker-trainer-rouge.vercel.app](https://poker-trainer-rouge.vercel.app)**
 
 ### Build
 

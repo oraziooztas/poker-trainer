@@ -2,26 +2,47 @@ import Link from 'next/link';
 
 const features = [
   {
-    title: 'Impara le Basi',
-    description: 'Ranking delle mani, regole e concetti fondamentali',
+    title: 'Percorso Guidato',
+    description: 'Impara passo dopo passo, dalle basi alla strategia avanzata',
+    href: '/path',
+    icon: '🗺️',
+    color: 'bg-blue-500',
+  },
+  {
+    title: 'Scenari Interattivi',
+    description: 'Cosa faresti tu? Situazioni reali con feedback immediato',
+    href: '/scenarios',
+    icon: '🎯',
+    color: 'bg-orange-500',
+  },
+  {
+    title: 'Quiz Matematici',
+    description: 'Outs, pot odds, equity e decisioni call/fold',
+    href: '/quiz',
+    icon: '❓',
+    color: 'bg-purple-500',
+  },
+  {
+    title: 'Teoria',
+    description: 'Ranking mani, regole e concetti fondamentali',
     href: '/learn',
     icon: '📚',
-    color: 'bg-blue-500'
+    color: 'bg-teal-500',
   },
   {
     title: 'Calcolatore Odds',
-    description: 'Calcola le probabilità in tempo reale',
+    description: 'Calcola equity, outs e pot odds in tempo reale',
     href: '/calculator',
     icon: '🔢',
-    color: 'bg-green-500'
+    color: 'bg-green-500',
   },
   {
-    title: 'Quiz Interattivi',
-    description: 'Metti alla prova le tue conoscenze',
-    href: '/quiz',
-    icon: '❓',
-    color: 'bg-purple-500'
-  }
+    title: 'Chart Preflop',
+    description: 'Quali mani giocare da ogni posizione',
+    href: '/preflop',
+    icon: '📋',
+    color: 'bg-yellow-500',
+  },
 ];
 
 export default function Home() {
@@ -30,16 +51,22 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center py-12">
         <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          ♠️ Poker Math Trainer
+          ♠️ Poker Trainer
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Impara la matematica del Texas Hold&apos;em con esercizi interattivi,
-          calcolatori e quiz per migliorare il tuo gioco.
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          Impara il Texas Hold&apos;em da zero. Percorso guidato, scenari pratici
+          e matematica del poker per vincere con gli amici.
         </p>
+        <Link
+          href="/path"
+          className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+        >
+          Inizia il Percorso
+        </Link>
       </section>
 
-      {/* Features */}
-      <section className="grid md:grid-cols-3 gap-6">
+      {/* Features Grid */}
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map(feature => (
           <Link
             key={feature.href}
@@ -59,16 +86,16 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Quick Stats */}
+      {/* Quick Formulas */}
       <section className="bg-gray-900 text-white rounded-xl p-8">
         <h2 className="text-2xl font-bold mb-6 text-center">Formule Chiave</h2>
         <div className="grid md:grid-cols-3 gap-6 text-center">
           <div>
-            <div className="text-3xl font-mono text-blue-400 mb-2">Outs × 2</div>
+            <div className="text-3xl font-mono text-blue-400 mb-2">Outs x 2</div>
             <p className="text-gray-400">% al Turn</p>
           </div>
           <div>
-            <div className="text-3xl font-mono text-green-400 mb-2">Outs × 4</div>
+            <div className="text-3xl font-mono text-green-400 mb-2">Outs x 4</div>
             <p className="text-gray-400">% al River (dal Flop)</p>
           </div>
           <div>
@@ -76,6 +103,16 @@ export default function Home() {
             <p className="text-gray-400">Pot Odds</p>
           </div>
         </div>
+      </section>
+
+      {/* Dashboard CTA */}
+      <section className="text-center">
+        <Link
+          href="/dashboard"
+          className="inline-block border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium hover:border-blue-500 hover:text-blue-600 transition-colors"
+        >
+          Vedi i tuoi progressi →
+        </Link>
       </section>
     </div>
   );

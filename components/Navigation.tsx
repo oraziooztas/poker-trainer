@@ -5,11 +5,14 @@ import { usePathname } from 'next/navigation';
 import MobileNav from './MobileNav';
 
 const links = [
-  { href: '/', label: 'Home', icon: '🏠' },
-  { href: '/learn', label: 'Impara', icon: '📚' },
-  { href: '/calculator', label: 'Calcolatore', icon: '🔢' },
-  { href: '/quiz', label: 'Quiz', icon: '❓' },
-  { href: '/preflop', label: 'Preflop', icon: '📋' },
+  { href: '/', label: 'Home' },
+  { href: '/path', label: 'Percorso' },
+  { href: '/learn', label: 'Teoria' },
+  { href: '/quiz', label: 'Quiz' },
+  { href: '/scenarios', label: 'Scenari' },
+  { href: '/calculator', label: 'Calcolatore' },
+  { href: '/preflop', label: 'Preflop' },
+  { href: '/dashboard', label: 'Dashboard' },
 ];
 
 export default function Navigation() {
@@ -19,23 +22,22 @@ export default function Navigation() {
     <nav className="bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold">
-            ♠️ Poker Math Trainer
+          <Link href="/" className="text-xl font-bold shrink-0">
+            ♠️ Poker Trainer
           </Link>
 
-          <div className="hidden md:flex gap-1">
+          <div className="hidden lg:flex gap-1">
             {links.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`
-                  px-4 py-2 rounded-lg transition-colors
+                  px-3 py-2 rounded-lg transition-colors text-sm
                   ${pathname === link.href
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300 hover:bg-gray-800'}
                 `}
               >
-                <span className="mr-2">{link.icon}</span>
                 {link.label}
               </Link>
             ))}

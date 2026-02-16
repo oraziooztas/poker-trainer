@@ -62,4 +62,4 @@ poker-trainer/
 - **Framework:** Next.js 16 (App Router)
 - **Stile:** Tailwind CSS 4
 - **Database:** nessuno (localStorage via `lib/storage.ts`)
-- **Deploy:** Vercel (previsto)
+- **Deploy:** Vercel — [poker-trainer-rouge.vercel.app](https://poker-trainer-rouge.vercel.app)
